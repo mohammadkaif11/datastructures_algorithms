@@ -23,6 +23,7 @@ class Solution {
             }
         }
 
+        // storing the ans
         int ans[] = new int[V];
         int i = 0;
         while (!st.isEmpty()) {

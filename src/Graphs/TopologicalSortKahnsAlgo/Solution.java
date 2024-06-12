@@ -6,6 +6,7 @@ class Solution {
     // Function to return list containing vertices in Topological order.
     static int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) {
         int indegree[] = new int[V];
+
         for (int i = 0; i < V; i++) {
             for (int it : adj.get(i)) {
                 indegree[it]++;
@@ -13,7 +14,7 @@ class Solution {
         }
 
         Queue<Integer> q = new LinkedList<Integer>();
-        ;
+
         for (int i = 0; i < V; i++) {
             if (indegree[i] == 0) {
                 q.add(i);
@@ -36,8 +37,6 @@ class Solution {
                 }
             }
         }
-        //Kahn's Alogrithm said that topological sort used for also detect for garph is cyclic or not
-        //topo length is equal to all vertices its mean that not cyclic otherwise it cyclic
         return topo;
     }
 }

@@ -1,7 +1,5 @@
 package Graphs.DetectCycle.Bfs;
 
-import Graphs.Bfs;
-
 import java.util.*;
 
 class BFS

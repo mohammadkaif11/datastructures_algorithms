@@ -31,11 +31,12 @@ public class UniquePath {
         if(dp[i][j]!=-1){
             return  dp[i][j];
         }
-        int left=Sol(i-1,j);
-        int right=Sol(i,j-1);
+        int left=SolMemo(i-1,j,dp);
+        int right=SolMemo(i,j-1,dp);
 
         return  dp[i][j]=left+right;
     }
+
     //Tabulation
     public  static  int SolTabulation(int m,int n){
         //dp array
@@ -61,7 +62,6 @@ public class UniquePath {
         }
 
         return  dp[m-1][n-1];
-
     }
 
 

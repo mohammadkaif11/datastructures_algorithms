@@ -2,8 +2,7 @@ package Graphs.DetechCycle.Dfs;
 import java.util.*;
 
 class main {
-    private boolean dfs(int node, int parent, int vis[], ArrayList<ArrayList<Integer>>
-            adj) {
+    private boolean dfs(int node, int parent, int vis[], ArrayList<ArrayList<Integer>>  adj) {
         vis[node] = 1;
         // go to all adjacent nodes
         for(int adjacentNode: adj.get(node)) {
