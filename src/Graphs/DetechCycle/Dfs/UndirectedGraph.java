@@ -26,7 +26,6 @@ public class UndirectedGraph {
             }
         }
 
-
         return false;
     }
 

@@ -13,6 +13,7 @@ public class Bfs {
         queue.add(s);
         while (queue.size()!=0){
             int node=queue.poll();
+            // Use the Node
             ArrayList<Integer> adjacentNode=adj.get(node);
             for(int i=0;i<adjacentNode.size();i++){
                 int  adj_node=adjacentNode.get(i);
@@ -22,8 +23,8 @@ public class Bfs {
                 }
             }
         }
-
     }
+
     static  void
     AddEdge(ArrayList<ArrayList<Integer>> adj,int node1,int node2){
         adj.get(node1).add(node2);

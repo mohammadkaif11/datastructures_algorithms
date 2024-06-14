@@ -27,8 +27,6 @@ class Solution {
             int node = q.peek();
             q.remove();
             topo[i++] = node;
-            // node is in your topo sort
-            // so please remove it from the indegree
 
             for (int it : adj.get(node)) {
                 indegree[it]--;

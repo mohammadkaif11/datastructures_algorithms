@@ -4,22 +4,17 @@ import java.util.*;
 
 class BFS
 {
-    static boolean checkForCycle(ArrayList<ArrayList<Integer>> adj, int s,
-                                 boolean vis[], int parent[])
+    static boolean checkForCycle(ArrayList<ArrayList<Integer>> adj, int s, boolean vis[])
     {
-        Queue<Node> q =  new LinkedList<>(); //BFS
+        Queue<Node> q =  new LinkedList<>();
         q.add(new Node(s, -1));
         vis[s] =true;
-
-        // until the queue is empty
         while(!q.isEmpty())
         {
-            // source node and its parent node
             int node = q.peek().first;
             int par = q.peek().second;
             q.remove();
 
-            // go to all the adjacent nodes
             for(Integer it: adj.get(node))
             {
                 if(vis[it]==false)
@@ -27,8 +22,6 @@ class BFS
                     q.add(new Node(it, node));
                     vis[it] = true;
                 }
-
-                // if adjacent node is visited and is not its own parent node
                 else if(par != it) return true;
             }
         }
@@ -46,7 +39,7 @@ class BFS
 
         for(int i=0;i<V;i++)
             if(vis[i]==false)
-                if(checkForCycle(adj, i,vis, parent))
+                if(checkForCycle(adj, i,vis))
                     return true;
 
         return false;
